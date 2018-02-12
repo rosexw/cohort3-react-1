@@ -5,7 +5,7 @@ import { H1 } from './components/header';
 import { ListofFriends } from './data/ListofFriends';
 import { AllFriends } from './components/AllFriends';
 import { BestFriends } from './components/BestFriends';
-import { BestFriendsAges } from './components/BestFriendsAges';
+import { AverageAgeofBestFriends } from './components/AverageAgeofBestFriends';
 
 class App extends Component {
   render() {
@@ -22,7 +22,7 @@ class App extends Component {
         </p>
         <h2>The Average age of My Best Friends</h2>
         <p className="My-Best-Friends-Ages">
-          <BestFriendsAges friends={ListofFriends} />
+          <AverageAgeofBestFriends friends={ListofFriends} />
         </p>
       </div>
     );
