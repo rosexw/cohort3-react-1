@@ -8,7 +8,7 @@ export const AverageAgeofBestFriends = ({ friends }) => {
   const sumOfAges = bestFriends.reduce((sum, friend) => {
     return sum + friend.age }, 0);
 
-  const averageAge = Math.floor(sumOfAges/bestFriends.length);
+  const averageAge = Math.round(sumOfAges/bestFriends.length);
 
 
   return (
