@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import { H1 } from './components/header';
+// import { H1 } from './components/header';
 import { friends } from './data/ListofFriends';
-import { AllFriends } from './components/AllFriends';
-import { BestFriends } from './components/BestFriends';
-import { AverageAgeofBestFriends } from './components/AverageAgeofBestFriends';
+// import { AllFriends } from './components/AllFriends';
+// import { BestFriends } from './components/BestFriends';
+// import { AverageAgeofBestFriends } from './components/AverageAgeofBestFriends';
 import FriendCard from './FriendCard.js';
 
 class App extends Component {
@@ -22,6 +22,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       // <div className="App">
       //   <H1 text="Friends">Friends</H1>
@@ -42,8 +43,12 @@ class App extends Component {
         <h1>FRIENDS</h1>
 
         <ul>
-          {friends.map(friend => <li>
-            <FriendCard { ...friend } showDetails={this.state.showDetails}/>
+          {friends.map(friend =>
+            <li>
+              <FriendCard
+              toggle={this.toggleChild}
+              { ...friend }
+              showDetails={this.state[friend.id]}/>
             </li>
           )}
         </ul>
