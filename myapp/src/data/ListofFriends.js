@@ -1,4 +1,4 @@
-export const ListofFriends = [
+export const friends = [
 {
   "first": "Heath",
   "last": "Richmond",
