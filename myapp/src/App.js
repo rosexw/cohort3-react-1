@@ -45,14 +45,30 @@ class App extends Component {
         <ul>
           {friends.map(friend =>
             <li>
+
               <FriendCard
               toggle={this.toggleChild}
               { ...friend }
-              showDetails={this.state[friend.id]}/>
+              showDetails={this.state.showDetails}/>
             </li>
           )}
         </ul>
       </div>
+      // <div>
+      //   <h1>FRIENDS</h1>
+      //
+      //   <ul>
+      //     {friends.map(friend =>
+      //       <li>
+      //
+      //         <FriendCard
+      //         toggle={this.toggleChild}
+      //         { ...friend }
+      //         showDetails={this.state[friend.id]}/>
+      //       </li>
+      //     )}
+      //   </ul>
+      // </div>
     );
   }
 }

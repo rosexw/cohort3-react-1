@@ -15,9 +15,21 @@ class FriendCard extends Component {
       //   return {...acc, [curr.id]:false}
       // }, {});
   }
-  toggleDetails = () => {
+  toggleChild = () => {
     this.setState({ showDetails: !this.state.showDetails});
   }
+
+  toggleAll = () => {
+    Object.keys(this.state).map(id => this.toggleChild);
+  }
+
+  // toggleDetails = () => {
+  //   this.setState({ [id] : !this.state[id]});
+  // }
+  //
+  // toggleAll = () => {
+  //   Object.keys(this.state).map(id => toggleDetails);
+  // }
 
   render() {
     const { id, first, last, isBestFriend, age } = this.props;
@@ -31,6 +43,18 @@ class FriendCard extends Component {
             </div>
           )}
         </div>
+
+        // const { id, first, last, isBestFriend, age, toggle } = this.props;
+        //   return (
+        //     <div style={{marginTop: "15px"}}>
+        //       <div> {`${first} ${last}`} </div>
+        //       <button onClick={() => toggle(id)}>Details: </button>
+        //       {this.state.showDetails && (
+        //         <div>
+        //           {`id: ${id} Age:  ${age} isBestFriend: ${isBestFriend}`}
+        //         </div>
+        //       )}
+        //     </div>
       )
     }
 }
