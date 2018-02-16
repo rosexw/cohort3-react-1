@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import { friends } from './data/ListofFriends';
+import { friends } from './data/ListofFriends';
 
 class FriendCard extends Component {
   constructor () {
@@ -20,7 +20,7 @@ class FriendCard extends Component {
     const { first, last, isBestFriend, age } = this.props;
       return (
         <div style={{marginTop: "15px"}}>
-          <div> {`{friend.first} {friend.last}`} </div>
+          <div> {`${first} ${last}`} </div>
           <button onClick={this.toggleDetails}>Details: </button>
           {this.state.showDetails && (
             <div>

@@ -30,7 +30,10 @@ class App extends Component {
         <h1>FRIENDS</h1>
 
         <ul>
-          {friends.map(friend => <FriendCard friend = { friend } />)}
+          {friends.map(friend => <li>
+            <FriendCard { ...friend } />
+            </li>
+          )}
         </ul>
       </div>
     );
