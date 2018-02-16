@@ -8,9 +8,13 @@ import { friends } from './data/ListofFriends';
 class FriendCard extends Component {
   constructor () {
     super();
-    this.state = {
+    this.state ={
       showDetails: false,
     }
+
+      // friends.reduce((acc, curr) => {
+      //   return {...acc, [curr.id]:false}
+      // }, {});
   }
   toggleDetails = () => {
     this.setState({ showDetails: !this.state.showDetails});

@@ -9,6 +9,18 @@ import { AverageAgeofBestFriends } from './components/AverageAgeofBestFriends';
 import FriendCard from './FriendCard.js';
 
 class App extends Component {
+  constructor () {
+    super();
+    this.state =
+      friends.reduce((acc, curr) => {
+        return {...acc, [curr.id]:false}
+      }, {});
+  }
+
+  toggleChild = id => {
+    this.setState({ [id]: true});
+  }
+
   render() {
     return (
       // <div className="App">
@@ -31,7 +43,7 @@ class App extends Component {
 
         <ul>
           {friends.map(friend => <li>
-            <FriendCard { ...friend } />
+            <FriendCard { ...friend } showDetails={this.state.showDetails}/>
             </li>
           )}
         </ul>
