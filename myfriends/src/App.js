@@ -8,6 +8,8 @@ import { friends } from './data/ListofFriends';
 // import { AverageAgeofBestFriends } from './components/AverageAgeofBestFriends';
 import FriendCard from './FriendCard.js';
 
+import NameSearch from './components/NameSearch.js'
+
 class App extends Component {
   constructor () {
     super();
@@ -42,9 +44,7 @@ class App extends Component {
       <div>
         <h1>FRIENDS</h1>
 
-        // Add search bar to main page
-
-        // <NameForm handleFormSubmit={this.handleFormSubmit} />
+        <NameSearch handleFormSubmit={this.handleFormSubmit} />
 
         <ul>
           {friends.map(friend =>
