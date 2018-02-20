@@ -25,6 +25,10 @@ class App extends Component {
 
   render() {
     console.log(this.state);
+    // let searchedFriend = this.props.friends.filter(
+    //       (friend) => {
+    //         return friend.first.indexOf(this.state.search) || friend.last.indexOf(this.state.search) !== -1;
+    //       });
     return (
       // <div className="App">
       //   <H1 text="Friends">Friends</H1>
@@ -45,6 +49,7 @@ class App extends Component {
         <h1>FRIENDS</h1>
 
         <NameSearch handleFormSubmit={this.handleFormSubmit} />
+
 
         <ul>
           {friends.map(friend =>
