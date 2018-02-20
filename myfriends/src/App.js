@@ -42,6 +42,8 @@ class App extends Component {
       <div>
         <h1>FRIENDS</h1>
 
+        // Add search bar to main page
+
         // <NameForm handleFormSubmit={this.handleFormSubmit} />
 
         <ul>
