@@ -8,27 +8,47 @@ import { friends } from './data/ListofFriends';
 // import { AverageAgeofBestFriends } from './components/AverageAgeofBestFriends';
 import FriendCard from './FriendCard.js';
 
-import NameSearch from './components/NameSearch.js'
+import SearchField from './components/SearchField.js'
 
 class App extends Component {
-  constructor () {
-    super();
-    this.state =
-      friends.reduce((acc, curr) => {
-        return {...acc, [curr.id]:false}
-      }, {});
-  }
+  // constructor () {
+  //   super();
+  //   this.state =
+  //     friends.reduce((acc, curr) => {
+  //       return {...acc, [curr.id]:false}
+  //     }, {});
+  // }
+  //
+  // toggleChild = id => {
+  //   this.setState({ [id]: true});
+  // }
 
-  toggleChild = id => {
-    this.setState({ [id]: true});
-  }
-
-  render() {
-    console.log(this.state);
+  // render() {
+    // console.log(this.state);
     // let searchedFriend = this.props.friends.filter(
     //       (friend) => {
     //         return friend.first.indexOf(this.state.search) || friend.last.indexOf(this.state.search) !== -1;
     //       });
+    constructor() {
+      super();
+      this.state = {
+        friends: friends
+      };
+    }
+
+    filterFriends = input => {
+      let newFriendList = friends.filter(friend => {
+        const name = friend.first + friend.last;
+        return name.toLowerCase().includes(input);
+      });
+      this.setState({ friends: newFriendList });
+    };
+
+    toggleChild = id => {
+      this.setState({ [id]: true});
+    }
+
+    render() {
     return (
       // <div className="App">
       //   <H1 text="Friends">Friends</H1>
@@ -48,8 +68,7 @@ class App extends Component {
       <div>
         <h1>FRIENDS</h1>
 
-        <NameSearch handleFormSubmit={this.handleFormSubmit} />
-
+        <SearchField filterFriends={this.filterFriends} />
 
         <ul>
           {friends.map(friend =>
