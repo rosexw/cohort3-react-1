@@ -42,6 +42,8 @@ class App extends Component {
       <div>
         <h1>FRIENDS</h1>
 
+        // <NameForm handleFormSubmit={this.handleFormSubmit} />
+
         <ul>
           {friends.map(friend =>
             <li>
