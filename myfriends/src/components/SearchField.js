@@ -16,7 +16,7 @@ const SearchField = ({ filterFriends }) => {
         text="Search for friend"
         placeholder="Friend's Name"
       />
-      <button onclick={handleChange}>Search</button>
+      <button onClick={handleChange}>Search</button>
     </div>
   );
 

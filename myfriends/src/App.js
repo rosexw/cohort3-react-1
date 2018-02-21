@@ -32,7 +32,8 @@ class App extends Component {
     constructor() {
       super();
       this.state = {
-        friends: friends
+        friends: friends,
+        search: ""
       };
     }
 
